@@ -1,0 +1,21 @@
+{
+  "name": "meetie3",
+  "version": "1.0.0",
+  "description": "Простой прототип сервиса «российского Lovable» на базе Alice LLM в Yandex Cloud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bujlove/lovalova.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bujlove/lovalova/issues"
+  },
+  "homepage": "https://github.com/Bujlove/lovalova#readme"
+}
