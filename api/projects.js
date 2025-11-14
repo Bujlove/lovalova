@@ -5,6 +5,58 @@ const { v4: uuidv4 } = require('uuid');
 const projects = {};
 
 function templateFiles(template) {
+  if (template === 'html-site') {
+    return {
+      'index.html': `<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+        <p>Начните редактировать этот файл или используйте AI для генерации кода.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>`,
+      'style.css': `* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+}`,
+      'script.js': `// JavaScript код здесь
+console.log('Сайт загружен!');`
+    };
+  }
   if (template === 'react-spa') {
     return {
       'src/App.jsx': 'export default function App() {\n  return <div>Hello Alice LLM!</div>;\n}\n',
