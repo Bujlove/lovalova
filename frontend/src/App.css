@@ -1,0 +1,196 @@
+#root {
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  background: #030712;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header {
+  border-radius: 20px;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.25), rgba(59, 7, 100, 0.35));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 8px;
+  color: #cbd5f5;
+}
+
+.project-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(15, 15, 19, 0.75);
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.project-bar input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: transparent;
+  color: inherit;
+}
+
+.project-bar button {
+  background: #0ea5e9;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.status {
+  min-width: 150px;
+  font-size: 14px;
+  color: #a5b4fc;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 200px 1fr 300px;
+  gap: 16px;
+}
+
+.file-panel,
+.chat-panel,
+main {
+  background: rgba(15, 15, 19, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.file-panel h3,
+.chat-panel h3,
+.editor-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #f1f5f9;
+}
+
+.file-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-panel button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 8px 10px;
+  color: inherit;
+  cursor: pointer;
+}
+
+.file-panel button.active {
+  border-color: rgba(14, 165, 233, 0.5);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+.empty {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editor-header button {
+  background: #22c55e;
+  border: none;
+  color: black;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+textarea {
+  min-height: 300px;
+  background: #020617;
+  color: #e2e8f0;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 14px;
+  resize: vertical;
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 350px;
+}
+
+.chat-msg {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.chat-msg.assistant {
+  background: rgba(15, 118, 110, 0.2);
+  border-color: rgba(45, 212, 191, 0.3);
+}
+
+.chat-panel textarea {
+  min-height: 120px;
+}
+
+.chat-panel button {
+  background: #6366f1;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
