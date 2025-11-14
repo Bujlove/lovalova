@@ -3,8 +3,9 @@
 Простой прототип сервиса «российского Lovable» на базе Alice LLM в Yandex Cloud.
 
 ## Структура
-- `backend/` — FastAPI, прокси к Alice LLM, in-memory хранилище проектов.
+- `backend/` — FastAPI (для локальной разработки), прокси к Alice LLM, in-memory хранилище проектов.
 - `frontend/` — Vite + React, файловый редактор и чат.
+- `api/` — Vercel Serverless Functions (Node.js) для продакшена.
 
 ## Настройка backend
 ```bash
@@ -30,7 +31,17 @@ npm run dev -- --host
 - `PUT /api/projects/{id}/files` — сохранить файл.
 - `POST /api/chat` — чат с Alice LLM.
 
+## Деплой на Vercel
+
+1. Подключите репозиторий к Vercel
+2. Установите переменные окружения в Vercel Dashboard:
+   - `YANDEX_API_KEY` — API ключ Yandex Cloud
+   - `YANDEX_FOLDER_ID` — ID папки в Yandex Cloud
+3. Vercel автоматически определит настройки из `vercel.json`
+4. Фронтенд будет собран из `frontend/`, API функции из `api/`
+
 ## Дальнейшие шаги
 - Добавить авторизацию и постоянное хранилище (YDB/Postgres).
 - Подключить sandbox для запуска кода.
 - Обработать биллинг и тарификацию в рублях.
+- Заменить in-memory store на постоянное хранилище для serverless функций.
